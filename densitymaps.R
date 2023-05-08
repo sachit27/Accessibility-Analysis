@@ -6,7 +6,6 @@ library(spatstat)
 library(dplyr)
 library(spdep)
 library(tidyverse)
-library(cluster)
 library(spNetwork)
 data <- read.csv("data.csv") #the data file includes data of the the amenities that are being analysed
 data <- data %>% distinct(lon, lat)
