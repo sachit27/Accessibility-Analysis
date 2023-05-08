@@ -16,7 +16,7 @@ To use this code, simply replace the name of the data file and the city name to 
 
 This code performs spatial point pattern analysis using several R libraries including sp, rgeos, spdep, spatstat, and rgdal. The code reads in a csv file containing spatial data and converts it to a spatial points data frame. It then performs point pattern analysis and plots the results. The code also creates a neighbor list object, converts the neighbor list to a listw object, and calculates the nearest neighbor distances for 1000 simulated point patterns. Finally, the code calculates quantiles for each bin in the histogram and adds a polygon for the confidence interval.
 
-###Dependencies: sp, rgeos, spdep, spatstat, rgdal
+Dependencies: sp, rgeos, spdep, spatstat, rgdal
 
 Usage
 1. Load the required libraries
