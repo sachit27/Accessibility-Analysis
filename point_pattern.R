@@ -5,7 +5,7 @@ library(spdep)
 library(spatstat)
 library(rgdal)
 
-# Read in the data
+# Read in the data. The data should have the "id", latitude and longitude data.
 data <- read.csv("data.csv")
 
 # Convert the data to a spatial points data frame
