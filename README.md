@@ -1,42 +1,60 @@
-# Accessibility-Analysis
+# Accessibility of Green Recreational Spaces in Cities
 
-## Density maps of amenities
+This GitHub repository contains code and resources used in the research on the accessibility of green recreational spaces in urban environments. Utilizing Python and R, the repository contains functionalities for generating density maps, performing spatial point pattern analysis, and calculating walking time to the nearest green spaces.
 
-This code generates a density map of amenities in a city using the R programming language and several libraries, including ggplot2, ggmap, osmdata, sp, spatstat, dplyr, spdep, tidyverse, and spNetwork.
+# Abstract
+As our world becomes increasingly urbanized, smart cities are leading the way in using technology to create more efficient, connected, and sustainable environments. However, amidst all the talk of connectivity and smartness, it's crucial not to lose sight of one of the most basic human needs: access to nature in cities. This research describes a novel open-source framework for investigating the availability and accessibility of green recreation spaces using open-source data and statistical analytic approaches. The framework includes a comprehensive set of tools for data extraction, processing, analysis, and visualization, thereby enabling reproducible geospatial research. We test our framework on five international cities: Medellin, Milan, Chicago, Singapore, and Mumbai. Through geospatial analysis and statistical modeling of data sourced from OpenStreetMaps, we explore and comprehend the characteristics and distribution of spatial accessibility related to green recreation spaces in five cities. We find significant clustering of green recreation spaces in all these cities, indicating that a majority of such spaces are located in close proximity to each other within small areas. Our findings also shed light on the potential implications of unequal distribution of green recreation spaces for the health and well-being of city residents and highlight the need for policies and initiatives that promote equitable access to green recreation spaces in smart cities.
 
-The data used in this analysis is stored in a CSV file named "data.csv". This data can be downloaded using the Python workflow. Before generating the map, the code first loads the necessary libraries and reads the CSV file using the read.csv function. The distinct function is used to remove any duplicate entries in the data based on their longitude and latitude coordinates.
+# Prerequisites
+## Software Requirements
+Python 3.11.2
+R (Version 4.3.1)
 
-Next, the get_map function is used to retrieve a map of the specified city using the Stamen source. You can change the name of the city by updating the argument in getbb function.
+## Libraries
+Python: branca, folium, geopandas, networkx, osmnx, pandas
 
-Finally, the stat_density2d function is used to generate the density map, which is plotted using the ggmap function. The scale_fill_viridis_c function is used to add a color scale to the legend, and the theme function is used to customize the legend position and text size.
+R: ggplot2, ggmap, osmdata, sp, spatstat, dplyr, spdep, tidyverse, spNetwork
 
-To use this code, simply replace the name of the data file and the city name to generate a density map of amenities in the desired location.
+# Usage
 
-## Spatial Point pattern analysis
+## Density Maps of Amenities (densitymaps.R)
 
-This code performs spatial point pattern analysis using several R libraries including sp, rgeos, spdep, spatstat, and rgdal. The code reads in a csv file containing spatial data and converts it to a spatial points data frame. It then performs point pattern analysis and plots the results. The code also creates a neighbor list object, converts the neighbor list to a listw object, and calculates the nearest neighbor distances for 1000 simulated point patterns. Finally, the code calculates quantiles for each bin in the histogram and adds a polygon for the confidence interval.
+This code generates a density map of amenities in a city.
 
-Dependencies: sp, rgeos, spdep, spatstat, rgdal
+### How to Run
+- Open densitymaps.R in your R IDE.
+- Make sure the data.csv file containing amenity data is in the working directory.
+- Change the city name in the get_map( getbb('City'), source="stamen") line.
+- Run the script.
 
-Usage
-1. Load the required libraries
-2. Read in the data from a csv file
-3. Convert the data to a spatial points data frame
-4. Perform point pattern analysis and plot the results
-5. Create a neighbor list object
-6. Convert the neighbor list to a listw object
-7. Calculate the nearest neighbor distances for 1000 simulated point patterns
-8. Calculate quantiles for each bin in the histogram
-9. Add a polygon for the confidence interval
+## Spatial Point Pattern Analysis (point_pattern.R)
 
-## Accessibility Maps
+Performs a spatial point pattern analysis using several R libraries. It calculates nearest neighbor distances and provides a confidence interval.
 
-This script uses OpenStreetMap data to calculate the walking time to the nearest green space in Madrid, Spain. The output is a map that shows the walking time in minutes to the nearest green space from any point in the city.
+### How to Run
+- Open point_pattern.R in your R IDE.
+- Make sure data.csv containing spatial data is in the working directory.
+- Run the script.
 
-Installation: To run this script, you need to have the following packages installed: branca, folium, geopandas, networkx, osmnx, pandas
+## Accessibility Maps (accessibility.py)  
 
-Usage: To run the script, open it in your Python editor or IDE and run it. You can change the city name by editing the code.
+Uses OpenStreetMap data to calculate the walking time to the nearest green recreational space in a city. It outputs a heatmap map and prints the average and longest walking times to the console.
 
-After running the script, a map will be displayed showing the walking time in minutes to the nearest green space from any point in the city.
+### How to Run
 
-Output: The output of this script is a map that shows the walking time in minutes to the nearest green space from any point in Madrid, Spain. The map also includes a color scale that indicates the walking time. The average walking time to the nearest green space and the longest walking time to the nearest green space are printed in the console. 
+- Open accessibility.py in your Python IDE.
+- To change the city, update the line G = ox.graph_from_place("Madrid, Spain", network_type="walk", buffer_dist = 500).
+- Run the script.
+
+### Code Structure
+- accessibility.py: For generating accessibility maps.
+- densitymaps.R: For creating density maps of amenities.
+- point_pattern.R: For spatial point pattern analysis.
+- data.csv: CSV file containing amenity data for the densitymaps.R and point_pattern.R scripts.
+
+### Citation
+
+For citing this research, please use:
+
+Martinez, J., & Mahajan, S. (2023). Smart Cities and Access to Nature: A Framework for Evaluating Green Recreation Space Accessibility. IEEE Access.
+
