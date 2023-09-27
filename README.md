@@ -12,13 +12,12 @@ As our world becomes increasingly urbanized, smart cities are leading the way in
 
 # Prerequisites
 ## Software Requirements
-Python 3.11.2
-R (Version 4.3.1)
+- Python 3.11.2
+- R (Version 4.3.1)
 
 ## Libraries
-Python: branca, folium, geopandas, networkx, osmnx, pandas
-
-R: ggplot2, ggmap, osmdata, sp, spatstat, dplyr, spdep, tidyverse, spNetwork
+- Python: branca, folium, geopandas, networkx, osmnx, pandas
+- R: ggplot2, ggmap, osmdata, sp, spatstat, dplyr, spdep, tidyverse, spNetwork
 
 # Usage
 
