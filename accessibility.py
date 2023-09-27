@@ -1,3 +1,4 @@
+# Import required libraries
 import branca.colormap as cm
 import folium
 import geopandas as gpd
@@ -5,16 +6,20 @@ import networkx as nx
 import osmnx as ox
 import pandas as pd
 
-#you can change the city name here
+# Load the walking network graph for a specified city (Default: Madrid, Spain)
 G = ox.graph_from_place("Madrid, Spain",  network_type="walk", buffer_dist = 500) 
 
+# Convert graph nodes to GeoDataFrame
 gdf_nodes = ox.graph_to_gdfs(G, edges=False)
 
+# Initialize folium map centered around Madrid
 m = folium.Map(
     location=[40.42270213582769, -3.7038863013248826],
     zoom_start=15,
     prefer_canvas=True,control_scale=True,
 )
+
+# Add nodes to the map
 for index, val in gdf_nodes.iterrows():
     folium.Circle(
         location=[val["y"], val["x"]],
@@ -52,7 +57,7 @@ greenspaces_df.to_csv('greenspaces_md.csv')
 
 all_sub_df = pd.read_csv("greenspaces_md.csv")
 
-
+# Define a dictionary class to store smallest distance values
 class DictSmallest(dict):
     def __setitem__(self, key, value):
         if (key not in self) or (key in self and self[key] > value):
@@ -62,6 +67,7 @@ class DictSmallest(dict):
             if (key not in self) or (key in self and self[key] > value):
                 self[key] =  value
 
+# Create a list of nearest nodes to each point of interest
 list_of_poi = []
 for index, row in all_sub_df.iterrows():
     list_of_poi.append(ox.distance.nearest_nodes(G, Y=row.lat, X=row.lon))
@@ -70,8 +76,8 @@ G = ox.project_graph(G)
 
 
 
+# Calculate shortest path lengths and store them in a dictionary
 node_distances = DictSmallest()
-
 for poi in list_of_poi:
     tmp_res = nx.shortest_path_length(G, source=poi)
     node_distances.update(tmp_res)
@@ -126,6 +132,7 @@ colormap.add_to(m)
 
 m
 
+# Calculate average and longest walking times to the nearest green space
 avg_walk_time = sum(node_distances.values())/len(node_distances.values())
 print("Average walking time to the nearest green space in minutes: " + str(avg_walk_time))
 
