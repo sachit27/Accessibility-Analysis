@@ -1,6 +1,6 @@
 # Accessibility of Green Recreational Spaces in Cities
 
-This GitHub repository contains code and resources used in the research on the accessibility of green recreational spaces in urban environments. Utilizing Python and R, the repository contains functionalities for generating density maps, performing spatial point pattern analysis, and calculating walking time to the nearest green spaces.
+This GitHub repository contains code and resources used in the research on the [accessibility of green recreational spaces in urban environments](https://ieeexplore.ieee.org/abstract/document/10214011). Utilizing Python and R, the repository contains functionalities for generating density maps, performing spatial point pattern analysis, and calculating walking time to the nearest green spaces.
 
 <div align="center">
   <img src="/images/wf.png"/>
@@ -66,5 +66,5 @@ Uses OpenStreetMap data to calculate the walking time to the nearest green recre
 
 For citing this research, please use:
 
-Martinez, J., & Mahajan, S. (2023). Smart Cities and Access to Nature: A Framework for Evaluating Green Recreation Space Accessibility. IEEE Access.
+[Martinez, J., & Mahajan, S. (2023). Smart Cities and Access to Nature: A Framework for Evaluating Green Recreation Space Accessibility. IEEE Access.](https://ieeexplore.ieee.org/abstract/document/10214011)
 
