@@ -2,6 +2,11 @@
 
 This GitHub repository contains code and resources used in the research on the accessibility of green recreational spaces in urban environments. Utilizing Python and R, the repository contains functionalities for generating density maps, performing spatial point pattern analysis, and calculating walking time to the nearest green spaces.
 
+<div align="center">
+  <img src="/images/wf.png"/>
+</div>
+
+
 # Abstract
 As our world becomes increasingly urbanized, smart cities are leading the way in using technology to create more efficient, connected, and sustainable environments. However, amidst all the talk of connectivity and smartness, it's crucial not to lose sight of one of the most basic human needs: access to nature in cities. This research describes a novel open-source framework for investigating the availability and accessibility of green recreation spaces using open-source data and statistical analytic approaches. The framework includes a comprehensive set of tools for data extraction, processing, analysis, and visualization, thereby enabling reproducible geospatial research. We test our framework on five international cities: Medellin, Milan, Chicago, Singapore, and Mumbai. Through geospatial analysis and statistical modeling of data sourced from OpenStreetMaps, we explore and comprehend the characteristics and distribution of spatial accessibility related to green recreation spaces in five cities. We find significant clustering of green recreation spaces in all these cities, indicating that a majority of such spaces are located in close proximity to each other within small areas. Our findings also shed light on the potential implications of unequal distribution of green recreation spaces for the health and well-being of city residents and highlight the need for policies and initiatives that promote equitable access to green recreation spaces in smart cities.
 
@@ -39,6 +44,11 @@ Performs a spatial point pattern analysis using several R libraries. It calculat
 ## Accessibility Maps (accessibility.py)  
 
 Uses OpenStreetMap data to calculate the walking time to the nearest green recreational space in a city. It outputs a heatmap map and prints the average and longest walking times to the console.
+
+<div align="center">
+  <img src="/images/hm.png"/>
+</div>
+
 
 ### How to Run
 
