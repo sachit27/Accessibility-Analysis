@@ -65,5 +65,5 @@ Uses OpenStreetMap data to calculate the walking time to the nearest green recre
 
 For citing this research, please use:
 
-[Martinez, J., & Mahajan, S. (2023). Smart Cities and Access to Nature: A Framework for Evaluating Green Recreation Space Accessibility. IEEE Access.](https://ieeexplore.ieee.org/abstract/document/10214011)
+[J. Martinez and S. Mahajan, "Smart Cities and Access to Nature: A Framework for Evaluating Green Recreation Space Accessibility," in IEEE Access, vol. 11, pp. 102014-102024, 2023, doi: 10.1109/ACCESS.2023.3303571.](https://ieeexplore.ieee.org/abstract/document/10214011)
 
